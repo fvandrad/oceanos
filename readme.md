@@ -4,12 +4,12 @@
 Um site interativo dedicado à conscientização sobre a conservação dos oceanos, apresentando conteúdo dinâmico sobre vida marinha, ameaças ambientais e a importância dos nossos oceanos.
 
 ## 🌟 Funcionalidades
-🎥 Seção hero com vídeo em tela cheia
-📱 Design responsivo
-🖼️ Carrossel de imagens mostrando vida marinha
-📊 Infográficos interativos
-📍 Menu de navegação flutuante
-💝 Integração com GitHub Sponsors
+- 🎥 Seção hero com vídeo em tela cheia
+- 📱 Design responsivo
+- 🖼️ Carrossel de imagens mostrando vida marinha
+- 📊 Infográficos interativos
+- 📍 Menu de navegação flutuante
+- 💝 Integração com GitHub Sponsors
 
 ## 🛠️ Tecnologias Utilizadas
 HTML5
@@ -25,18 +25,17 @@ Abra o arquivo index.html no seu navegador
 ## 📱 Visualização em Redes Sociais
 O site inclui meta tags Open Graph para compartilhamento otimizado em redes sociais com:
 
-Título personalizado
-Descrição
-Imagem de prévia
-Informações de URL
-🔗 Seções de Navegação
-🏠 Início
-💧 Águas (Referência Bíblica)
-ℹ️ Introdução
-🖼️ Galeria
-⚠️ Problemas
-💝 Código Aberto
-💖 Apoie o Projeto
+- Título personalizado
+- Descrição
+- Imagem de prévia
+- Informações de URL
+- 🔗 Seções de Navegação
+- 🏠 Início
+- 💧 Águas (Referência Bíblica)
+- ℹ️ Introdução
+- 🖼️ Galeria
+- ⚠️ Problemas
+- 💖 Apoie o Projeto
 
 ## 🤝 Contribuição
 Contribuições são bem-vindas! Envie um pull request ou abra uma issue.
