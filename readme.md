@@ -18,19 +18,6 @@ JavaScript
 Capacidade de streaming de vídeo
 Meta tags Open Graph para compartilhamento social
 
-## 🗂️ Estrutura do Projeto
-oceanos/
-├── 📄 index.html
-├── 📄 styles.css
-├── 📄 script.js
-├── 📁 images/
-│   ├── 🖼️ canva-coral.png
-│   ├── 🖼️ canva-peixe.png
-│   ├── 🖼️ canva-baleia.png
-│   └── 🖼️ canva-tartaruga.png
-└── 📁 videos/
-    └── 🎥 canva-oceano.mp4
-
 ## 🚀 Como Iniciar
 Clone o repositório:
 Abra o arquivo index.html no seu navegador
