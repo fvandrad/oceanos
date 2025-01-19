@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .floating-menu {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            perspective: 1000px;
+        }
+
+        .menu-button {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, #0088ff, #0066cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .menu-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.4);
+        }
+
+        .menu-button.active {
+            transform: rotate(45deg) scale(1.1);
+            background: linear-gradient(145deg, #0066cc, #0088ff);
+        }
+
+        .menu-button span {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .menu-items {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: none;
+            min-width: 180px;
+            transform-origin: bottom right;
+            opacity: 0;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu-items.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .menu-items a {
+            display: block;
+            padding: 12px 20px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 2px 0;
+        }
+
+        .menu-items a:hover {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            color: #007bff;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-menu">
+        <div class="menu-button" onclick="toggleMenu()">
+            <span>+</span>
+        </div>
+        <div class="menu-items" id="menuItems">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menuButton = document.querySelector('.menu-button');
+            const menuItems = document.getElementById('menuItems');
+            
+            menuButton.classList.toggle('active');
+            menuItems.classList.toggle('show');
+        }
+
+        // Fecha o menu ao clicar fora dele
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.floating-menu');
+            const menuItems = document.getElementById('menuItems');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (!menu.contains(event.target) && menuItems.classList.contains('show')) {
+                menuItems.classList.remove('show');
+                menuButton.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

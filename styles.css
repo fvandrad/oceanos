@@ -1,0 +1,470 @@
+:root {
+    --primary-blue: #007BFF;
+    --deep-blue: #005BB5;
+    --turquoise: #40E0D0;
+    --white: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+    color: var(--primary-blue);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--deep-blue);
+    animation: fadeIn 1s ease-in;
+}
+
+.floating-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    perspective: 1000px;
+}
+
+.menu-button {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, var(--primary-blue), var(--deep-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.menu-button.active {
+    transform: rotate(45deg) scale(1.1);
+    background: linear-gradient(145deg, var(--deep-blue), var(--primary-blue));
+}
+
+.menu-button span {
+    color: var(--white);
+    font-size: 24px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu-items {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 180px;
+    transform-origin: bottom right;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-items.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.menu-items a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--deep-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 2px 0;
+}
+
+.menu-items a:hover {
+    background: linear-gradient(145deg, var(--white), #e9ecef);
+    color: var(--primary-blue);
+    transform: translateX(5px);
+}
+
+/* Header Styles */
+.hero {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('ocean-bg.jpg') no-repeat center center/cover; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s ease-out;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Section Styles */
+section {
+    padding: 80px 20px;
+    animation: fadeIn 1s ease-out;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.1); */
+    background-color: white;
+    /* opacity: 0.; */
+    /* background: linear-gradient(45deg, var(--white), var(--primary-blue)); */
+    text-align: center;
+}
+
+section p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--deep-blue);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-out;
+}
+
+/* Marine Life Carousel */
+.carousel {
+    display: flex;
+    overflow-x: none;
+    gap: 2px;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    align-items: center;
+    animation: slideIn 1.2s ease-out;
+    justify-content: center;
+}
+
+.carousel img {
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .carousel img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel img {
+        width: 200px;
+        height: 130px;
+    }
+}
+
+/* Threats Section */
+.infographics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    animation: slideUp 1s ease-out;
+}
+
+.infographic {
+    background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+    color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.infographic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Buttons */
+.cta-button {
+    background: linear-gradient(45deg, var(--primary-blue), var(--turquoise));
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--turquoise), var(--primary-blue));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.cta-button:hover::before {
+    opacity: 1;
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #1a2a6c, #261fb2, #7d2dfd);
+    color: var(--white);
+    padding: 0px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideUp 1s ease-out, gradientShift 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-links a {
+    color: white;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+.footer-content {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    animation: fadeIn 1.5s ease-out;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.sponsors {
+    border: 0;
+    border-radius: 3px;
+    height: 32px;
+    width: 140px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+.sponsors:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
